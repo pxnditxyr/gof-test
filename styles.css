@@ -1,6 +1,6 @@
 body {
     padding: 20px;
-    background-color: #444;
+    background-color: #20212A;
 }
 
 #gridContainer {
@@ -8,7 +8,7 @@ body {
 }
 
 table {
-    background-color: #C5D6C6;
+    background-color: #245953;
     border-spacing: 0;
 }
 
@@ -29,9 +29,7 @@ span {
     padding: .75em;
     border-radius: 5px;
     border: none;    
-    background: linear-gradient(
-        to bottom right,
-        #C5DEC6, #587559);
+    background: #C9F4AA;
 }
 
 td.dead {
