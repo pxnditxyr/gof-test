@@ -14,8 +14,8 @@ table {
 
 td {
     border: 1px solid #F1F5DA;
-    border-radius: 3px;
-    width: 10px;
+    border-radius: 1px;
+    width: 20px;
     height: 10px;
 }
 
@@ -25,7 +25,8 @@ span {
 
 #start,
 #clear,
-#random {
+#random,
+#rulex {
     padding: .75em;
     border-radius: 5px;
     border: none;    
@@ -37,6 +38,6 @@ td.dead {
 }
 
 td.live {
-    background-color: #CC4774;
+    background-color: #333;
     border-radius: 10px;
 }
