@@ -1,5 +1,5 @@
 const ROWS = 38;
-const COLS = 100;
+const COLS = 50;
 
 let playing = false;
 
@@ -97,6 +97,38 @@ const setupControlButtons = () => {
   clearButton.onclick = clearButtonHandler;
   const randomButton = document.getElementById('random');
   randomButton.onclick = randomButtonHandler;
+  const ruleXButton = document.getElementById('rulex');
+  ruleXButton.onclick = ruleXButtonHandler;
+}
+
+const ruleXButtonHandler = () => {
+  if ( playing ) return;
+  clearButtonHandler();
+  let counter = COLS;
+  let start = 0;
+  for ( let i = ROWS - 1; i >= 0; i-- ) {
+    for ( let j = start; j < counter; j++ ) {
+      if (i % 2 == 0) {
+        if (j % 2 == 0) {
+          grid[i][j] = 0;
+        } else {
+          const cell = document.getElementById( i + '_' + j );
+          cell.setAttribute( 'class', 'live' );
+          grid[i][j] = 1;
+        }
+      } else {
+        if (j % 2 == 0) {
+          const cell = document.getElementById( i + '_' + j );
+          cell.setAttribute( 'class', 'live' );
+          grid[i][j] = 1;
+        } else {
+          grid[i][j] = 0;
+        }
+      }
+    }
+    counter -= 1;
+    start += 1;
+  }
 }
 
 const randomButtonHandler = () => {
@@ -106,7 +138,7 @@ const randomButtonHandler = () => {
     for ( let j = 0; j < COLS; j++ ) {
       const isLive = Math.round( Math.random() );
       if ( isLive == 1 ) {
-        var cell = document.getElementById( i + '_' + j );
+        const cell = document.getElementById( i + '_' + j );
         cell.setAttribute( 'class', 'live' );
         grid[ i ][ j ] = 1;
       }
